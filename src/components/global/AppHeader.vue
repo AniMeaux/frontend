@@ -26,15 +26,15 @@
               </span>
             </nuxt-link>
           </li>
-          <li>
+          <!-- <li>
             <nuxt-link to="/sheets" class="yellow">
               <span>
                 Fiches d'élevage
               </span>
             </nuxt-link>
-          </li>
+          </li> -->
           <li>
-            <nuxt-link to="/agenda" class="red">
+            <nuxt-link to="/events" class="red">
               <span>
                 Agenda
               </span>
@@ -61,6 +61,7 @@
 
 <style lang="scss" scoped>
   $header-height: 70px;
+  $header-shadow-size: 2px;
 
   .app-header{
     display: flex;
@@ -68,10 +69,12 @@
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 10;
 
     height: $header-height;
 
     background-color: white;
+    box-shadow: 0 $header-shadow-size / 2 $header-shadow-size rgba(black, 0.12);
 
     .wrap{
       display: flex;
