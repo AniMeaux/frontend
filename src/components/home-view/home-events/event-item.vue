@@ -1,20 +1,45 @@
 <template>
   <nuxt-link to="/events" class="event-item">
     <h3 class="event-item-title">
-      Week-end adoption et collecte
+      {{ name }}
     </h3>
     <span class="event-item-date">
-      Du 1 janvier au 3 janvier
+      Du {{ getBegin }} au {{ getEnd }}
     </span>
     <p class="event-item-description">
-      Week-end adoption et collecte dans le magasin Animalis à Vert-Saint-Denis. Nos chats en attente d'une famille vous y attendront !
+      {{ description }}
     </p>
   </nuxt-link>
 </template>
 
 <script>
+  import moment from 'moment';
+
   export default {
     name: 'event-item',
+    props: {
+      id: {
+        type: Number,
+      },
+      name: {
+        type: String,
+      },
+      description: {
+        type: String,
+      },
+      begin: {
+      },
+      end: {
+      },
+    },
+    computed: {
+      getBegin() {
+        return moment(this.begin).format('DD MMMM');
+      },
+      getEnd() {
+        return moment(this.end).format('DD MMMM');
+      },
+    },
   };
 </script>
 

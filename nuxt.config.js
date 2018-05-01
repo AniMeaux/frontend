@@ -4,6 +4,7 @@ const plugins = require('./src/config/plugins');
 const build = require('./src/config/build');
 const css = require('./src/config/css');
 const loading = require('./src/config/loading');
+const env = require('./src/config/env');
 
 module.exports = {
   head,
@@ -13,4 +14,5 @@ module.exports = {
   plugins,
   build,
   loading,
+  env,
 };

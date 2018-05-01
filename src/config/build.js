@@ -1,5 +1,5 @@
 module.exports = {
-  vendor: ['apisauce'],
+  vendor: ['apisauce', 'moment'],
   postcss: [
     require('autoprefixer'),
   ],
