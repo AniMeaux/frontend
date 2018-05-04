@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link to="/events" class="event-item">
+  <nuxt-link :to="'/events/' + id" class="event-item">
     <h3 class="event-item-title">
       {{ name }}
     </h3>

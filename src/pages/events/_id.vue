@@ -11,5 +11,22 @@
         title: 'Adopter',
       };
     },
+    data() {
+      return {
+        title: '',
+      };
+    },
+    validate({ params }) {
+      return /^\d+$/.test(params.id);
+    },
+    asyncData() {
+
+    },
+    mounted() {
+      const params = this.$route.params;
+      this.$api.get(`/events/${params.id}`).then((res) => {
+        console.log('data', res);
+      });
+    },
   };
 </script>

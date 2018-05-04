@@ -3,10 +3,6 @@
     <home-carousel />
     <div class="wrap">
       <div class="home-content">
-        <aside class="home-content-side">
-          <home-events />
-          <home-facebook />
-        </aside>
         <div class="home-content-main">
           <h1>
             Ani'Meaux
@@ -39,8 +35,13 @@
             Chaque animal placé est une âme sauvée.          
           </p>
         </div>
+        <aside class="home-content-side">
+          <home-events />
+          <home-facebook />
+        </aside>
       </div>
     </div>
+    <home-newsletter/>
   </section>
 </template>
 
@@ -48,12 +49,14 @@
   import HomeCarousel from '~/components/home-view/home-carousel';
   import HomeFacebook from '~/components/home-view/home-facebook';
   import HomeEvents from '~/components/home-view/home-events';
+  import HomeNewsletter from '~/components/home-view/home-newsletter';
 
   export default {
     components: {
       HomeCarousel,
       HomeFacebook,
       HomeEvents,
+      HomeNewsletter,
     },
     head() {
       return {
@@ -68,7 +71,7 @@
     &-content{
       position: relative;
       display: grid;
-      grid-template-columns: 4fr 8fr;
+      grid-template-columns: 8fr 4fr;
       grid-gap: 20px;
 
       &-side, &-main{

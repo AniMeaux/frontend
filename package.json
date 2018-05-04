@@ -21,6 +21,7 @@
     "moment": "^2.22.1",
     "nuxt": "^1.0.0-rc3",
     "source-map-support": "^0.4.15",
+    "vee-validate": "^2.0.8",
     "vue": "^2.5.16",
     "vue-i18n": "^7.6.0"
   },
