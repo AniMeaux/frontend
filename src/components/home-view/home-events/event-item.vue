@@ -1,12 +1,12 @@
 <template>
   <nuxt-link :to="'/events/' + id" class="event-item">
-    <h3 class="event-item-title">
+    <h3 class="subhead-1 event-item-title">
       {{ name }}
     </h3>
-    <span class="event-item-date">
+    <span class="caption event-item-date">
       Du {{ getBegin }} au {{ getEnd }}
     </span>
-    <p class="event-item-description">
+    <p class="body-1 event-item-description">
       {{ description }}
     </p>
   </nuxt-link>
@@ -67,21 +67,16 @@
       background: rgb(245, 245, 245);
     }
 
-    &-title{
-      font-size: 16px;
-      color: $primary-text;
-      text-transform: uppercase;
+    &-date, &-description{
       margin: 0;
     }
 
     &-date{
       color: $blue;
-      font-size: 14px;
     }
 
     &-description{
       color: $secondary-text;
-      font-size: 16px;
     }
   }
 </style>

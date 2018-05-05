@@ -1,10 +1,10 @@
 <template>
   <div class="home-newsletter">
     <div class="wrap">
-      <h2 class="home-newsletter-title">
+      <h2 class="headline">
         Rejoignez notre newsletter
       </h2>
-      <p class="home-newsletter-content">
+      <p class="body-1">
         Inscrivez-vous à notre newsletter et soyez au courant de toute nos dernières actualités
       </p>
       <newsletter-form/>
@@ -34,21 +34,12 @@
     background-position: center;
     height: 400px;
 
-    &-title, &-content{
+    & .headline, & .body-1{
       color: white;
       text-align: center;
       margin: 0;
       padding: 0;
     }
 
-    &-title{
-      font-size: 24px;
-      font-weight: 500;
-      text-transform: uppercase;
-    }
-
-    &-content{
-      font-size: 16px;
-    }
   }
 </style>

@@ -2,7 +2,7 @@
   <div class="newsletter-form">
     <form @submit.prevent="formSubmitted" class="newsletter-form-element">
       <div class="newsletter-form-element-label">
-        <label for="email">
+        <label for="email" class="label">
           E-mail
         </label>
       </div>
@@ -22,7 +22,7 @@
             'is-valid': fields.$scope && fields.$scope.email && fields.$scope.email.valid
           }"
         />
-        <span class="input-error" v-if="errors.has('email')">
+        <span class="caption input-error" v-if="errors.has('email')">
           {{ errors.first('email') }}
         </span>
       </div>
@@ -83,9 +83,9 @@
       }
     }
 
-    label{
+    .label{
       color: $primary-text;
-      font-size: 14px;
+      // font-size: 14px;
     }
   }
 </style>

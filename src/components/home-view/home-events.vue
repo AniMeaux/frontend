@@ -1,6 +1,6 @@
 <template>
   <div class="home-events">
-    <h2 class="home-events-title">
+    <h2 class="headline home-events-title">
       <i class="material-icons" aria-hidden="true">today</i>
       Evénements à venir
     </h2>
@@ -42,10 +42,7 @@
   .home-events{
     &-title{
       display: inline-flex;
-      font-size: 20px;
-      font-weight: 500;
       color: $blue;
-      text-transform: uppercase;
 
       i{
         vertical-align: middle;

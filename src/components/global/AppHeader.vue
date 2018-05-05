@@ -12,38 +12,14 @@
       </div>
       <nav class="app-header-navigation">
         <ul>
-          <li>
-            <nuxt-link to="/adopt" class="blue">
+          <li v-for="(link, k) in links" :key="k">
+            <nuxt-link
+              :to="link.to"
+              :title="link.title"
+              :class="[link.color]"
+              class="button">
               <span>
-                À adopter
-              </span>
-            </nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/success" class="green">
-              <span>
-                Nos réussites
-              </span>
-            </nuxt-link>
-          </li>
-          <!-- <li>
-            <nuxt-link to="/sheets" class="yellow">
-              <span>
-                Fiches d'élevage
-              </span>
-            </nuxt-link>
-          </li> -->
-          <li>
-            <nuxt-link to="/events" class="red">
-              <span>
-                Agenda
-              </span>
-            </nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/contact" class="lightblue">
-              <span>
-                Nous contacter
+                {{ link.name }}
               </span>
             </nuxt-link>
           </li>
@@ -56,6 +32,36 @@
 <script>
   export default {
     name: 'app-header',
+    data() {
+      return {
+        links: [
+          {
+            to: '/adopt',
+            name: 'À adopter',
+            title: 'Nos animaux à l\'adoption',
+            color: 'blue',
+          },
+          {
+            to: '/success',
+            name: 'Nos réussites',
+            title: 'Nos animaux adoptés',
+            color: 'green',
+          },
+          {
+            to: '/events',
+            name: 'Agenda',
+            title: 'Tous nos événements',
+            color: 'red',
+          },
+          {
+            to: '/contact',
+            name: 'Nous contacter',
+            title: 'Des questions? Contactez-nous',
+            color: 'lightblue',
+          },
+        ],
+      };
+    },
   };
 </script>
 
@@ -109,8 +115,6 @@
         text-decoration: none;
         vertical-align: middle;
 
-        font-size: 16px;
-        text-transform: uppercase;
         padding: 0 16px;
         color: $primary-text;
 
