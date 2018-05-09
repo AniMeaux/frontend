@@ -36,8 +36,8 @@
           </p>
         </div>
         <aside class="home-content-side">
-          <home-events />
           <home-facebook />
+          <home-events />
         </aside>
       </div>
     </div>

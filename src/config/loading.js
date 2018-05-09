@@ -1,4 +1,1 @@
-module.exports = {
-  color: '#0078BF',
-  height: '3px',
-};
+module.exports = '~/components/global/app-loading.vue';

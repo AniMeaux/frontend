@@ -4,7 +4,8 @@
       <div class="app-header-logo">
         <nuxt-link to="/">
           <img
-            title="Ani'Meaux logo"
+            title="Logo Ani'Meaux"
+            alt="Logo Ani'Meaux"
             src="~/assets/img/logo-simple.svg"
             :height="60"
           />

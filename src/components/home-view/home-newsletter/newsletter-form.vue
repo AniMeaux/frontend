@@ -1,35 +1,42 @@
 <template>
   <div class="newsletter-form">
-    <form @submit.prevent="formSubmitted" class="newsletter-form-element">
-      <div class="newsletter-form-element-label">
-        <label for="email" class="label">
-          E-mail
-        </label>
-      </div>
-      <div></div>
-      <div class="newsletter-form-element-input">
-        <input
-          class="input"
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Votre adresse e-mail"
-          v-model="email"
-          v-validate="'required|email'"
-          required
-          :class="{
-            'is-invalid': errors.has('email'),
-            'is-valid': fields.$scope && fields.$scope.email && fields.$scope.email.valid
-          }"
-        />
-        <span class="caption input-error" v-if="errors.has('email')">
-          {{ errors.first('email') }}
-        </span>
-      </div>
-      <div>
-        <input class="btn btn-blue" type="submit" value="Envoyer" :disabled="loading" />
-      </div>
-    </form>
+    <div class="newsletter-form-container">
+      <transition name="fade" mode="out-in">
+        <form v-if="!success" @submit.prevent="formSubmitted" class="newsletter-form-element" key="form">
+          <div class="newsletter-form-element-input">
+            <input
+              class="input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Votre adresse e-mail"
+              v-model="email"
+              v-validate="'required|email'"
+              required
+              :disabled="loading"
+              :class="{
+                'is-invalid': errors.has('email'),
+                'is-valid': fields.$scope && fields.$scope.email && fields.$scope.email.valid
+              }"
+            />
+            <span class="caption input-error" v-if="errors.has('email')">
+              {{ errors.first('email') }}
+            </span>
+          </div>
+          <div>
+            <button
+              class="btn btn-blue"
+              type="submit"
+              :disabled="loading || errors.has('email')"
+              :class="{ disabled: loading || errors.has('email') }"
+            >Envoyer</button>
+          </div>
+        </form>
+        <div v-else class="body-1 newsletter-form-success" key="success">
+          Merci ! Vous vous êtes bien inscrit à notre newsletter.
+        </div>
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -40,17 +47,27 @@
       return {
         email: null,
         loading: false,
+        success: false,
       };
     },
     methods: {
       formSubmitted() {
+        this.loading = true;
+        this.$nuxt.$loading.start();
         this.$api.post('/newsletters', {
           newsletter: {
             email: this.email,
           },
-        }).then((res) => {
-          console.log('res', res);
+        }).then(() => {
+          setTimeout(() => {
+            this.$nuxt.$loading.finish();
+            this.loading = false;
+            this.success = true;
+          }, 3000);
         }).catch((err) => {
+          this.$nuxt.$loading.finish();
+          this.loading = false;
+          this.success = false;
           console.log('err', err);
         });
       },
@@ -60,16 +77,19 @@
 
 <style lang="scss" scoped>
   .newsletter-form{
-    &-element{
-      display: grid;
-      grid-template: repeat(2, auto) / 3fr 1fr;
-      grid-gap: 16px;
-      width: 30%;
+    &-container{
+      width: 40%;
       margin: 0 auto;
       background-color: white;
       padding: 16px;
       margin-top: 32px;
       border-radius: 3px;
+    }
+    
+    &-element{
+      display: grid;
+      grid-template: 1fr / 3fr 1fr;
+      grid-gap: 16px;
 
       &-label{
         display: flex;
@@ -81,11 +101,27 @@
         display: flex;
         flex-direction: column;
       }
+      .btn {
+        width: 100%;
+      }
     }
 
-    .label{
-      color: $primary-text;
-      // font-size: 14px;
+    &-success{
+      margin: 0;
+    }
+  }
+
+  .fade{
+    &-enter-active, &-leave-active{
+      transition: opacity 200ms;
+    }
+    
+    &-enter, &-leave-to{
+      opacity: 0;
+    }
+
+    &-enter-to, &-leave{
+      opacity: 1;
     }
   }
 </style>

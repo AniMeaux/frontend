@@ -1,10 +1,11 @@
 .btn{
-  display: flex;
+  display: block;
   padding: 8px 16px;
 
   font-size: 14px;
   text-transform: uppercase;
   font-weight: 500;
+  text-align: center;
   
   border: none;
   border-radius: 3px;
@@ -22,5 +23,10 @@
     &:hover{
       background-color: lighten($blue, 5%);
     }
+  }
+
+  &.disabled, &.disabled:hover{
+    background-color: lightgrey;
+    color: $primary-text;
   }
 }
