@@ -17,5 +17,9 @@
 
     width: 100%;
     height: 440px;
+
+    @media only screen and (max-width: 485px) {
+      height: 200px;
+    }
   }
 </style>

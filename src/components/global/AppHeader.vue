@@ -1,9 +1,20 @@
 <template>
   <div class="app-header">
     <div class="wrap">
+      <a href="" class="app-header-menu">
+        <i class="material-icons" aria-hidden="true">menu</i>
+      </a>
       <div class="app-header-logo">
         <nuxt-link to="/">
           <img
+            class="mobile"
+            title="Logo Ani'Meaux"
+            alt="Logo Ani'Meaux"
+            src="~/assets/img/logo-icon.svg"
+            :height="60"
+          />
+          <img
+            class="desktop"
             title="Logo Ani'Meaux"
             alt="Logo Ani'Meaux"
             src="~/assets/img/logo-simple.svg"
@@ -26,6 +37,14 @@
           </li>
         </ul>
       </nav>
+      <div class="app-header-buttons">
+        <nuxt-link
+          to="/become-member"
+          class="btn btn-blue"
+        >
+          Devenir membre
+        </nuxt-link>
+      </div>
     </div>
   </div>
 </template>
@@ -81,23 +100,52 @@
     height: $header-height;
 
     background-color: white;
-    box-shadow: 0 $header-shadow-size / 2 $header-shadow-size rgba(black, 0.12);
 
     .wrap{
       display: flex;
     }
 
+    &-menu{
+      display: none;
+      text-decoration: none;
+      height: 100%;
+      width: 45px;
+      text-align: center;
+
+      @media only screen and (max-width: 495px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+
     &-logo{
       display: flex;
       margin: auto 0;
-      
+
+      .mobile{
+        display: none;
+      }
+
       img{
         margin: auto 0;
+
+        @media only screen and (max-width: 495px) {
+          display: none;
+
+          &.mobile{
+            display: block;
+          }
+        }
       }
     }
     
     &-navigation{
       margin-left: 32px;
+
+      @media only screen and (max-width: 495px) {
+        display: none;
+      }
       
       ul, li{
         margin: 0;
@@ -150,6 +198,24 @@
           border-bottom-width: 3px;
         }
       }
+    }
+
+    &-buttons{
+      display: flex;
+      justify-content: flex-end;
+      flex: 1;
+
+      .btn{
+        height: 45px;
+        line-height: 45px;
+        text-decoration: none;
+        padding: 0 16px;
+        margin: auto 0;
+      }
+    }
+
+    @media only screen and (max-width: 495px) {
+      padding: 0 16px;
     }
   }
 </style>

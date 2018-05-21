@@ -84,12 +84,25 @@
       padding: 16px;
       margin-top: 32px;
       border-radius: 3px;
+
+      @media only screen and (max-width: 980px) {
+        width: 80%;
+      }
+      
+      @media only screen and (max-width: 783px) {
+        width: 100%;
+        border-radius: 0;
+      }
     }
     
     &-element{
       display: grid;
       grid-template: 1fr / 3fr 1fr;
       grid-gap: 16px;
+
+      @media only screen and (max-width: 380px) {
+        grid-template-columns: 1fr;
+      }
 
       &-label{
         display: flex;

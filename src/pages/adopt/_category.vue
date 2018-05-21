@@ -1,40 +1,31 @@
 <template>
-  <div class="wrap">
-    <h1>
-      À adopter
-    </h1>
-    <div class="adopt-layout">
-      <div class="adopt-layout-side">
-        <nav>
-          <ul>
-            <li v-for="(category, k) in categories" :key="k">
-              <nuxt-link :to="'/adopt/' + k">
-                {{ category.name }}
-              </nuxt-link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="adopt-layout-main">
-        <h2>
-          Nos chats
-        </h2>
-        <h3>
-          Nos chats qui attendent une famille
-        </h3>
-        <ul>
-          <li v-for="(animal, k) in animals" :key="k">
-            <a href="">
-              {{ animal.name }} - {{ animal.age }} ans
-            </a>
-          </li>
-        </ul>
+  <div class="adopt has-header">
+    <div class="wrap">
+      <h1 class="adopt-title display-1 title-underline">
+        À adopter
+      </h1>
+      <div class="adopt-layout">
+        <div class="adopt-layout-side">
+          <adopt-categories />
+        </div>
+        <div class="adopt-layout-main">
+          <adopt-header :category="$route.params.category" />
+          <adopt-list
+            :animals="animals"
+          />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
+
 <script>
+  import AdoptCategories from '@/components/adopt/adopt-categories';
+  import AdoptList from '@/components/adopt/adopt-list';
+  import AdoptHeader from '@/components/adopt/adopt-header';
+
+
   export default {
     head() {
       return {
@@ -43,12 +34,12 @@
       };
     },
     validate({ params }) {
-      const categories = ['dogs', 'cats', 'reptiles', 'rodents', 'birds'];
+      const categories = ['dog', 'cat', 'reptile', 'rodent', 'bird'];
       return categories.includes(params.category);
     },
-    async asyncData({ app }) {
+    async asyncData({ app, params }) {
       const { data } = await app.$api.get('/animals');
-      return { animals: data.filter(e => e.status === 'non_adopted') };
+      return { animals: data.filter(e => e.status === 'non_adopted' && e.category === params.category) };
     },
     data() {
       return {
@@ -71,14 +62,72 @@
         },
       };
     },
+    components: {
+      AdoptCategories,
+      AdoptList,
+      AdoptHeader,
+    },
   };
 </script>
 
 <style lang="scss" scoped>
   .adopt{
+    background-color: #F7F7F7;
+    
+    &-title{
+      color: $blue;
+      margin-top: 16px;
+
+      @media only screen and (max-width: 483px) {
+        padding-left: 16px;
+
+        &::after{
+          left: 16px;
+        }
+      }
+    }
+    
     &-layout{
       display: grid;
       grid-template-columns: 3fr 9fr;
+      grid-gap: 16px;
+      
+      margin-top: 32px;
+
+      &-side, &-main{
+        background: white;
+        border-radius: 3px 3px 0 0;
+      }
+
+      &-main{
+        padding: 32px;
+        
+        h2, h3{
+          &.blue{
+            color: $blue;
+          }
+          &.red{
+            color: $red;
+          }
+          &.yellow{
+            color: $yellow;
+          }
+          &.lightblue{
+            color: $lightblue;
+          }
+          &.green{
+            color: $green;
+          }
+        }
+      }
+
+      @media only screen and (max-width: 720px) {
+        grid-template-columns: 2fr 10fr;
+      }
+
+      @media only screen and (max-width: 495px) {
+        grid-template-columns: 1fr;
+      }
     }
   }
 </style>

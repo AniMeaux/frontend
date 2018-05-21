@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="has-header">
     <home-carousel />
     <div class="wrap">
       <div class="home-content">
@@ -102,6 +102,10 @@
         //   color: $secondary-text;
         //   line-height: 1.5em;
         // }
+      }
+
+      @media only screen and (max-width: 783px){
+        grid-template-columns: 1fr;
       }
     }
   }
