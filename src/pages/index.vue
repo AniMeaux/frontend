@@ -1,5 +1,6 @@
 <template>
   <section class="has-header">
+    <home-warning />
     <home-carousel />
     <div class="wrap">
       <div class="home-content">
@@ -50,6 +51,7 @@
   import HomeFacebook from '~/components/home-view/home-facebook';
   import HomeEvents from '~/components/home-view/home-events';
   import HomeNewsletter from '~/components/home-view/home-newsletter';
+  import HomeWarning from '~/components/home-view/home-warning';
 
   export default {
     components: {
@@ -57,10 +59,18 @@
       HomeFacebook,
       HomeEvents,
       HomeNewsletter,
+      HomeWarning,
     },
     head() {
       return {
         title: 'Protéction animale',
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: 'Site officiel de l\'association de protéction animale Ani\'Meaux, basé sur la ville de Meaux',
+          },
+        ],
       };
     },
   };

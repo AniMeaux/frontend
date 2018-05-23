@@ -1,5 +1,4 @@
-module.exports = {
-  API: {
-    BASE_URL: 'http://localhost:3000',
-  },
-};
+const production = require('./env/production');
+const development = require('./env/development');
+
+module.exports = process.env.NODE_ENV === 'production' ? production : development;

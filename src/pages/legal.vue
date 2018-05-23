@@ -30,7 +30,7 @@
 
       <p class="body-1">Le site web <a :href="WEBSITE_URL">{{ WEBSITE_URL }}</a> est mis à jour régulièrement par {{PUBLISH_NAME}} responsable. De la même façon, les mentions légales peuvent être modifiées à tout moment : elles s’imposent néanmoins à l’utilisateur qui est invité à s’y référer le plus souvent possible afin d’en prendre connaissance.</p>
       <h3 class="title">3. Description des services fournis.</h3>
-      <p class="body-1">Le site internet <a :href="WEBSITE_URL">{{ WEBSITE_URL }}</a> a pour objet de fournir une information concernant l’ensemble des activités de la société.</p>
+      <p class="body-1">Le site internet <a :href="WEBSITE_URL">{{ WEBSITE_URL }}</a> a pour objet de fournir une information concernant l’ensemble des activités de la l'association.</p>
       <p class="body-1">{{NAME}} s’efforce de fournir sur le site <a :href="WEBSITE_URL">{{ WEBSITE_URL }}</a> des informations aussi précises que possible. Toutefois, il ne pourra être tenu responsable des oublis, des inexactitudes et des carences dans la mise à jour, qu’elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.</p>
       <p class="body-1">Toutes les informations indiquées sur le site <a :href="WEBSITE_URL">{{ WEBSITE_URL }}</a> sont données à titre indicatif, et sont susceptibles d’évoluer. Par ailleurs, les renseignements figurant sur le site <a :href="WEBSITE_URL">{{ WEBSITE_URL }}</a> ne sont pas exhaustifs. Ils sont donnés sous réserve de modifications ayant été apportées depuis leur mise en ligne.</p>
       <h3 class="title">4. Limitations contractuelles sur les données techniques.</h3>
@@ -98,7 +98,7 @@
           {
             hid: 'description',
             name: 'description',
-            content: 'Mentions légales et conditions générales d\'utilisation du site internet d\'Ani\'Meaux',
+            content: 'Mentions légales et conditions générales d\'utilisation du site internet de l\'association Ani\'Meaux',
           },
         ],
       };
