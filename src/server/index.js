@@ -1,11 +1,18 @@
 import express from 'express';
 import { Nuxt, Builder } from 'nuxt';
+import http from 'http';
+import redirectSSL from 'redirect-ssl';
 
 const app = express();
-const host = process.env.HOST || '127.0.0.1';
 const port = process.env.PORT || 8080;
 
+
+app.enable('trust proxy');
 app.set('port', port);
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(redirectSSL);
+}
 
 // Import and Set Nuxt.js options
 const config = require('../../nuxt.config.js');
@@ -24,6 +31,6 @@ if (config.dev) {
 // Give nuxt middleware to express
 app.use(nuxt.render);
 
-// Listen the server
-app.listen(port, host);
-console.log(`Server listening on ${host}:${port}`); // eslint-disable-line no-console
+http.createServer(app).listen(port, () => {
+  console.log(`Server listening on ${port}`); // eslint-disable-line no-console
+});
