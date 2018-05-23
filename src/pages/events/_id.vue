@@ -25,6 +25,7 @@
     mounted() {
       const params = this.$route.params;
       this.$api.get(`/events/${params.id}`).then((res) => {
+        // eslint-disable-next-line
         console.log('data', res);
       });
     },

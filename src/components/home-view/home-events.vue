@@ -37,7 +37,6 @@
     created() {
       this.$api.get('/events').then((res) => {
         this.items = res.data;
-        console.log('res', res);
       });
     },
   };

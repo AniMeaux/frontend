@@ -64,11 +64,10 @@
             this.loading = false;
             this.success = true;
           }, 3000);
-        }).catch((err) => {
+        }).catch(() => {
           this.$nuxt.$loading.finish();
           this.loading = false;
           this.success = false;
-          console.log('err', err);
         });
       },
     },
