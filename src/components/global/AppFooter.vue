@@ -27,9 +27,9 @@
             77100, MEAUX
           </div>
           <div class="contact">
-            <!-- <a class="tel menu" :href="`tel:${getTelephone}`">
-              {{ getTelephone }}
-            </a> -->
+            <a class="tel menu" :href="`tel:${getTelephone}`">
+              {{ getTelephoneText }}
+            </a>
             <a href="mailto:contact@animeaux.org" class="email menu">
               contact@animeaux.org
             </a>
@@ -55,7 +55,10 @@
     name: 'app-footer',
     computed: {
       getTelephone() {
-        return '+33123456789';
+        return '+33612194392';
+      },
+      getTelephoneText() {
+        return '06 12 19 43 92';
       },
     },
     data() {

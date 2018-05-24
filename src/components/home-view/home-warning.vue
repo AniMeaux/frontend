@@ -16,11 +16,6 @@
           Merci de nous <nuxt-link to="/contact">signaler</nuxt-link> tout message / publication vous paraissant suspect.
         </p>
       </div>
-      <div class="home-warning-close">
-        <button class="btn" @click="close">
-          <i class="material-icons">close</i>
-        </button>
-      </div>
     </div>
   </div>
 </template>
@@ -28,11 +23,6 @@
 <script>
   export default {
     name: 'home-warning',
-    methods: {
-      close() {
-        // close
-      },
-    },
   };
 </script>
 
@@ -43,23 +33,6 @@
 
     .wrap{
       display: flex;
-    }
-
-    &-close{
-      .btn{
-        width: 45px;
-        height: 45px;
-        border-radius: 45px;
-        text-align: center;
-        padding: 0;
-
-        background-color: transparent;
-        color: white;
-
-        &:hover{
-          background-color: rgba(white, 0.2);
-        }
-      }
     }
 
     h2, p{

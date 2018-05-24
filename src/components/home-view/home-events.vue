@@ -1,5 +1,5 @@
 <template>
-  <div class="home-events" v-if="items.length > 0">
+  <div class="home-events" v-if="items && items.length > 0">
     <h2 class="headline home-events-title">
       <i class="material-icons" aria-hidden="true">today</i>
       Evénements à venir
@@ -36,7 +36,9 @@
     },
     created() {
       this.$api.get('/events').then((res) => {
-        this.items = res.data;
+        if (res.ok) {
+          this.items = res.data;
+        }
       });
     },
   };

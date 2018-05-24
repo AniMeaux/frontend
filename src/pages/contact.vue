@@ -7,7 +7,7 @@
       <div class="layout-aside">
         <div>
           <p class="body-1">
-            Vous avez une question concernant notre association ou vous souhaitez nous faire part d'un animal en danger? <br />N'hésitez pas à nous contacter par <a href="mailto:contact@animeaux.org">mail</a>, ou même Facebook.
+            Vous avez une question concernant notre association ou vous souhaitez nous faire part d'un animal en danger? <br />N'hésitez pas à nous contacter par <a href="mailto:contact@animeaux.org">mail</a>, <a href="tel:+33612194392">téléphone</a>, ou même Facebook.
           </p>
           <p class="body-1">
             Nous répondons aux messages très rapidement alors n'hésitez pas à nous faire coucou!

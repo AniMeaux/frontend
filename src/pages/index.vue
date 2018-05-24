@@ -9,31 +9,16 @@
             Ani'Meaux
           </h1>
           <h2 class="headline">
-            Qui sommes-nous
+            Qui sommes-nous ?
           </h2>
           <p class="body-1">
-            Nous sauvons, accueillons en famille d’accueil et plaçons tous les animaux que nos routes et déroutes croisent.
+            Ani’Meaux est une association loi 1901, nouvellement créée dans le but de sauver des animaux en tout genres. Nous récupérons les animaux abandonnés ou errants, que nous plaçons dans une famille d’accueil adaptée à l’animal afin de lui prodiguer tous les soins nécessaires à son rétablissement, avant de leur trouver une nouvelle famille pour la vie.
           </p>
           <p class="body-1">
-            Nous préférons qu'un propriétaire nous avoue être dépassé ou pas en mesure de donner à son animal les soins dont il a besoin, plutôt que de voir un canin au fond d'un canal, lesté par des poids.
+            Pour se faire, nous travaillons en équipe, soudée, tous bénévoles et passionnés. L’union fait la force ; plus nous serons nombreux et plus nos actions seront grandissantes.
           </p>
           <p class="body-1">
-            Pour cela, nous travaillons avec d'autres associations, avec nos membres, avec nos contacts et notre entourage pour le bien-être de chaque animal.
-          </p>
-          <p class="body-1">
-            Nous nous moquons de la gloire, de la manière, seuls les résultats comptent.
-          </p>
-          <p class="body-1">
-            Plus nous placerons d'animaux dans des familles aimantes et plus vite nous pourrons en sauver d'autres. Les bavardages permettent de nous vider mais pas d'avancer. Nous pourrions choisir de vous montrer des images de chiens tristes, de chats massacrés, de lapins éventrés, de souris disséquées. Nous pourrions commenter ces images à l'infini, cela ne changerait rien. Mais ensemble, en coordonnant nos convictions, en mêlant nos sentiments à nos actes, nous pouvons sauver un nombre important d'animaux.
-          </p>
-          <p class="body-1">
-            C'est ainsi que notre association grandit, grâce à vous, à vos dons aussi infimes soient-ils, à votre aide, à votre soutient. A ce jour, plusieurs animaux, chats, chiens, rongeurs, ont été placés avec succès et ont trouvé le foyer qu'ils méritent.
-          </p>
-          <p class="body-1">
-            Pour que chaque animal ait le droit à une deuxième chance.
-          </p>
-          <p class="body-1">
-            Chaque animal placé est une âme sauvée.          
+            Grâce à vos dons, financiers ou matériels, aussi infimes soient-ils, nous pouvons élargir notre champ d’action et agir dans les meilleures conditions pour la cause animale.
           </p>
         </div>
         <aside class="home-content-side">
@@ -63,12 +48,12 @@
     },
     head() {
       return {
-        title: 'Protéction animale',
+        title: 'Protection animale',
         meta: [
           {
             hid: 'description',
             name: 'description',
-            content: 'Site officiel de l\'association de protéction animale Ani\'Meaux, basé sur la ville de Meaux',
+            content: 'Site officiel de l\'association de protection animale Ani\'Meaux, basé sur la ville de Meaux',
           },
         ],
       };

@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Ani\'Meaux - Protéction animale',
+  title: 'Ani\'Meaux - Protection animale',
   titleTemplate: 'Ani\'Meaux - %s',
   meta: [
     { charset: 'utf-8' },
@@ -7,22 +7,22 @@ module.exports = {
     {
       hid: 'og:title',
       property: 'og:title',
-      content: 'Ani\'Meaux - Protéction animale',
+      content: 'Ani\'Meaux - Protection animale',
     },
     {
       hid: 'og:description',
       property: 'og:description',
-      content: 'Site officiel de l\'association de protéction animale Ani\'Meaux, basé sur la ville de Meaux',
+      content: 'Site officiel de l\'association de protection animale Ani\'Meaux, basé sur la ville de Meaux',
     },
     {
       hid: 'twitter:title',
       property: 'twitter:title',
-      content: 'Ani\'Meaux - Protéction animale',
+      content: 'Ani\'Meaux - Protection animale',
     },
     {
       hid: 'twitter:description',
       property: 'twitter:description',
-      content: 'Site officiel de l\'association de protéction animale Ani\'Meaux, basé sur la ville de Meaux',
+      content: 'Site officiel de l\'association de protection animale Ani\'Meaux, basé sur la ville de Meaux',
     },
     {
       hid: 'og:url',
