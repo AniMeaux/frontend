@@ -6,7 +6,7 @@
           Attention aux arnaques!
         </h2>
         <p class="body-1">
-          Nous sommes victimes d'une série d'arnaques faîtes en notre nom à notre insu. Nous vous rappelons que <strong>nous ne publions nulle part autre que sur notre page <a href="">Facebook</a> et <a href="https://www.animeaux.org">notre site internet</a></strong>.
+          Nous sommes victimes d'une série d'arnaques faîtes en notre nom à notre insu. Nous vous rappelons que <strong>nous ne publions nulle part autre que sur notre page <a href="https://www.facebook.com/animeaux.protectionanimale/">Facebook</a> et <a href="https://www.animeaux.org">notre site internet</a></strong>.
         </p>
         <p class="body-1">
           <strong>Nous sommes une association et non pas un éleveur. Nous ne vendons pas d'animaux LOF.</strong>
