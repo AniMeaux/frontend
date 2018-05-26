@@ -1,4 +1,4 @@
-import env from './env';
+const env = require('./env');
 
 module.exports = [
   '@nuxtjs/pwa',
