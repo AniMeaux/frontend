@@ -48,12 +48,12 @@
     },
     head() {
       return {
-        title: 'Protection animale',
+        title: 'Association de protection animale',
         meta: [
           {
             hid: 'description',
             name: 'description',
-            content: 'Site officiel de l\'association de protection animale Ani\'Meaux, basé sur la ville de Meaux',
+            content: 'Site officiel de l\'association de protection animale Ani\'Meaux, basé sur la ville de Meaux et ses environs.',
           },
         ],
       };
