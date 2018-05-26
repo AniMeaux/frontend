@@ -1,6 +1,7 @@
 module.exports = {
-  webpack: (config, options, webpack) => {
-    config.entry.main = './server/index.js'
-    return config
-  }
-}
+  webpack: (config) => {
+    // eslint-disable-next-line
+    config.entry.main = './src/server/index.js';
+    return config;
+  },
+};

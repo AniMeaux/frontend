@@ -1,0 +1,40 @@
+@import "./layout.scss";
+@import "./typography.scss";
+@import "./elements/input.scss";
+@import "./elements/button.scss";
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body{
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  background-color: #fff;
+  margin: 0;
+}
+
+.has-header{
+  padding-top: 70px;
+}
+
+.title-underline{
+  position: relative;
+
+  &::after{
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    content: " ";
+    width: 100px;
+    height: 2px;
+    background-color: $blue;
+  }
+}
