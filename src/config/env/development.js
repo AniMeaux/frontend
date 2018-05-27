@@ -7,4 +7,7 @@ module.exports = {
       ID: 'fakeid',
     },
   },
+  CLOUDINARY: {
+    CLOUD_NAME: 'hryjanpur',
+  },
 };

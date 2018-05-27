@@ -7,7 +7,7 @@
       <nuxt/>
     </main>
     <footer>
-      <!-- <home-donation /> -->
+      <home-donation />
       <app-footer/>
     </footer>
   </div>

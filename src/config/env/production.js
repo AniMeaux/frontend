@@ -7,4 +7,7 @@ module.exports = {
       ID: 'UA-118470648-1',
     },
   },
+  CLOUDINARY: {
+    CLOUD_NAME: 'hryjanpur',
+  },
 };

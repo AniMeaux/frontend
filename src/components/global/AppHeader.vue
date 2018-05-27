@@ -38,12 +38,12 @@
         </ul>
       </nav>
       <div class="app-header-buttons">
-        <!-- <nuxt-link
+        <nuxt-link
           to="/become-member"
           class="btn btn-blue"
         >
           Devenir membre
-        </nuxt-link> -->
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -55,24 +55,24 @@
     data() {
       return {
         links: [
-          // {
-          //   to: '/adopt',
-          //   name: 'À adopter',
-          //   title: 'Nos animaux à l\'adoption',
-          //   color: 'blue',
-          // },
-          // {
-          //   to: '/success',
-          //   name: 'Nos réussites',
-          //   title: 'Nos animaux adoptés',
-          //   color: 'green',
-          // },
-          // {
-          //   to: '/events',
-          //   name: 'Agenda',
-          //   title: 'Tous nos événements',
-          //   color: 'red',
-          // },
+          {
+            to: '/adopt',
+            name: 'À adopter',
+            title: 'Nos animaux à l\'adoption',
+            color: 'blue',
+          },
+          {
+            to: '/success',
+            name: 'Nos réussites',
+            title: 'Nos animaux adoptés',
+            color: 'green',
+          },
+          {
+            to: '/events',
+            name: 'Agenda',
+            title: 'Tous nos événements',
+            color: 'red',
+          },
           {
             to: '/contact',
             name: 'Nous contacter',

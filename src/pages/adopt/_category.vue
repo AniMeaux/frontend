@@ -1,24 +1,8 @@
 <template>
   <div class="adopt has-header">
-    <div class="wrap">
-      <h1 class="adopt-title display-1 title-underline">
-        À adopter
-      </h1>
-      <div class="adopt-layout">
-        <div class="adopt-layout-side">
-          <adopt-categories />
-        </div>
-        <div class="adopt-layout-main">
-          <adopt-header :category="$route.params.category" />
-          <adopt-list
-            :animals="animals"
-          />
-        </div>
-      </div>
-    </div>
+    <nuxt />
   </div>
 </template>
-
 
 <script>
   import AdoptCategories from '@/components/adopt/adopt-categories';

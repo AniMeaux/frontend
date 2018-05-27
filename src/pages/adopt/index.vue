@@ -2,7 +2,7 @@
   <div class="adopt has-header">
     <div class="wrap">
       <h1 class="adopt-title display-1 title-underline">
-        À adopter
+        adopt view
       </h1>
       <div class="adopt-layout">
         <div class="adopt-layout-side">
