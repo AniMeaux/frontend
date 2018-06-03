@@ -86,9 +86,9 @@
         WEBSITE_URL: 'https://www.animeaux.org',
         ADDRESS: '81, Rue Faubourg Saint-Nicolas 77100, MEAUX',
         PUBLISH_NAME: 'Sara MOREAU',
-        PUBLISH_EMAIL: 'sara@animeaux.org',
+        PUBLISH_EMAIL: 'presidente@animeaux.org',
         WEB_NAME: 'William DA SILVA',
-        WEB_EMAIL: 'william@animeaux.org',
+        WEB_EMAIL: 'contact@animeaux.org',
       };
     },
     head() {
