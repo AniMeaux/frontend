@@ -1,6 +1,6 @@
 <template>
   <section class="has-header">
-    <home-warning />
+    <home-warning v-if="!loading && isWarningVisible" />
     <home-carousel />
     <div class="wrap">
       <div class="home-content">
@@ -32,6 +32,8 @@
 </template>
 
 <script>
+  import { mapGetters, mapActions } from 'vuex';
+
   import HomeCarousel from '~/components/home-view/home-carousel';
   import HomeFacebook from '~/components/home-view/home-facebook';
   import HomeEvents from '~/components/home-view/home-events';
@@ -46,14 +48,34 @@
       HomeNewsletter,
       HomeWarning,
     },
+    methods: {
+      ...mapActions(['setWarningVisible']),
+    },
+    computed: {
+      ...mapGetters(['isWarningVisible']),
+    },
+    mounted() {
+      this.$localForage.getItem('warningVisible')
+        .then((res) => {
+          this.loading = false;
+          if (res !== null) {
+            this.setWarningVisible(res);
+          }
+        });
+    },
+    data() {
+      return {
+        loading: true,
+      };
+    },
     head() {
       return {
-        title: 'Protection animale',
+        title: 'Association de protection animale',
         meta: [
           {
             hid: 'description',
             name: 'description',
-            content: 'Site officiel de l\'association de protection animale Ani\'Meaux, basé sur la ville de Meaux',
+            content: 'Site officiel de l\'association de protection animale Ani\'Meaux, basé sur la ville de Meaux et ses environs.',
           },
         ],
       };

@@ -37,14 +37,14 @@
           </li>
         </ul>
       </nav>
-      <div class="app-header-buttons">
-        <!-- <nuxt-link
+      <!-- <div class="app-header-buttons">
+        <nuxt-link
           to="/become-member"
           class="btn btn-blue"
         >
           Devenir membre
-        </nuxt-link> -->
-      </div>
+        </nuxt-link>
+      </div> -->
     </div>
   </div>
 </template>
@@ -55,12 +55,12 @@
     data() {
       return {
         links: [
-          // {
-          //   to: '/adopt',
-          //   name: 'À adopter',
-          //   title: 'Nos animaux à l\'adoption',
-          //   color: 'blue',
-          // },
+          {
+            to: '/adopt',
+            name: 'À adopter',
+            title: 'Nos animaux à l\'adoption',
+            color: 'blue',
+          },
           // {
           //   to: '/success',
           //   name: 'Nos réussites',

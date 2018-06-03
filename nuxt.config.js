@@ -5,6 +5,8 @@ const build = require('./src/config/build');
 const css = require('./src/config/css');
 const loading = require('./src/config/loading');
 const env = require('./src/config/env');
+const auth = require('./src/config/auth');
+const localforage = require('./src/config/localforage');
 
 module.exports = {
   head,
@@ -15,4 +17,6 @@ module.exports = {
   build,
   loading,
   env,
+  auth,
+  localforage,
 };

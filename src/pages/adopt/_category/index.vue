@@ -1,18 +1,22 @@
 <template>
-  <div class="adopt has-header">
+  <div class="adopt-category">
     <div class="wrap">
-      <h1 class="adopt-title display-1 title-underline">
+      <h1 class="adopt-category-title display-1 title-underline">
         À adopter
       </h1>
-      <div class="adopt-layout">
-        <div class="adopt-layout-side">
+      <div class="adopt-category-layout">
+        <div class="adopt-category-layout-side">
           <adopt-categories />
         </div>
-        <div class="adopt-layout-main">
-          <adopt-header :category="'cat'" />
+        <div class="adopt-category-layout-main">
+          <adopt-header :category="getCategory" />
           <adopt-list
-            :animals="getAnimalsAdoption"
+            v-if="getFilteredAnimals.length > 0"
+            :animals="getFilteredAnimals"
           />
+          <p class="body-1" v-else>
+            Aucun animal n'est disponible à l'adoption pour le moment.
+          </p>
         </div>
       </div>
     </div>
@@ -27,20 +31,19 @@
   import AdoptHeader from '@/components/adopt/adopt-header';
 
   export default {
+    name: 'adopt-category',
     head() {
-      return {
-        title: 'À adopter',
-        meta: [
-          {
-            hid: 'description',
-            name: 'description',
-            content: 'Tous nos animaux disponibles à l\'adoption, sous contrat associatif.',
-          },
-        ],
+      const titleCategories = {
+        cat: 'Chats à adopter',
+        dog: 'Chiens à adopter',
+        rodent: 'Rongeurs à adopter',
+        bird: 'Oiseaux à adopter',
+        reptile: 'Reptiles à adopter',
       };
-    },
-    computed: {
-      ...mapGetters(['getAnimalsAdoption']),
+
+      return {
+        title: titleCategories[this.$route.params.category],
+      };
     },
     fetch({ app, store }) {
       return app.$api.get('/animals')
@@ -49,6 +52,16 @@
             store.dispatch('setAnimals', response.data);
           }
         });
+    },
+    computed: {
+      ...mapGetters(['getAnimalsAdoption']),
+      getFilteredAnimals() {
+        return this.getAnimalsAdoption
+          .filter(e => e.category === this.$route.params.category);
+      },
+      getCategory() {
+        return this.$route.params.category;
+      },
     },
     components: {
       AdoptCategories,
@@ -59,7 +72,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .adopt{
+  .adopt-category{
     background-color: #F7F7F7;
     
     &-title{
@@ -119,4 +132,3 @@
     }
   }
 </style>
-

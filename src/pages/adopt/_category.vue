@@ -1,24 +1,8 @@
 <template>
   <div class="adopt has-header">
-    <div class="wrap">
-      <h1 class="adopt-title display-1 title-underline">
-        À adopter
-      </h1>
-      <div class="adopt-layout">
-        <div class="adopt-layout-side">
-          <adopt-categories />
-        </div>
-        <div class="adopt-layout-main">
-          <adopt-header :category="$route.params.category" />
-          <adopt-list
-            :animals="animals"
-          />
-        </div>
-      </div>
-    </div>
+    <nuxt />
   </div>
 </template>
-
 
 <script>
   import AdoptCategories from '@/components/adopt/adopt-categories';
@@ -29,17 +13,12 @@
   export default {
     head() {
       return {
-        title: 'À adopter',
-        animals: [],
+        title: 'À adopteraze',
       };
     },
     validate({ params }) {
       const categories = ['dog', 'cat', 'reptile', 'rodent', 'bird'];
       return categories.includes(params.category);
-    },
-    async asyncData({ app, params }) {
-      const { data } = await app.$api.get('/animals');
-      return { animals: data.filter(e => e.status === 'non_adopted' && e.category === params.category) };
     },
     data() {
       return {

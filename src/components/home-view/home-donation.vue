@@ -7,16 +7,19 @@
             Faîtes un don!
           </h2>
           <p class="body-1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam optio ipsa deleniti reprehenderit quis vitae quasi consequatur quo velit, accusamus nisi qui sunt fuga aliquid cum molestias doloremque eligendi veritatis?
+            Vous souhaitez nous aider mais vous ne pouvez accueillir ou adopter? Vous pouvez nous faire un don!
+          </p>
+          <p class="body-1">
+            Ce don servira à financer les soins vétérinaires, effectuer plus de sauvetages et acheter du matériel pour les animaux.
           </p>
         </div>
         <div class="home-donation-buttons">
-          <nuxt-link to="/donate" class="btn btn-white">
+          <a href="http://paypal.me/animeaux" title="Faire un don" class="btn btn-white">
             Faire un don
-          </nuxt-link>
-          <nuxt-link to="/become-member" class="btn btn-white-outline">
+          </a>
+          <!-- <nuxt-link to="/become-member" class="btn btn-white-outline">
             Devenir membre
-          </nuxt-link>
+          </nuxt-link> -->
         </div>
       </div>
     </div>
@@ -36,7 +39,7 @@
 
     &-layout{
       display: grid;
-      grid-template-columns: 8fr 4fr;
+      grid-template-columns: 9fr 3fr;
       grid-gap: 16px;
       
       @media only screen and (max-width: 495px) {
@@ -46,7 +49,7 @@
 
     &-buttons{
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr;
       grid-gap: 16px;
 
       @media only screen and (max-width: 980px) {

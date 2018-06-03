@@ -1,6 +1,6 @@
 {
   "name": "animeaux",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Front-end website",
   "author": "William DA SILVA <william.da.silva@outlook.com>",
   "private": true,
@@ -16,7 +16,10 @@
     "node": "8.5.0"
   },
   "dependencies": {
+    "@nuxtjs/auth": "^4.5.1",
+    "@nuxtjs/axios": "^5.3.1",
     "@nuxtjs/google-analytics": "^2.0.2",
+    "@nuxtjs/localforage": "^1.0.2",
     "@nuxtjs/pwa": "^2.0.8",
     "apisauce": "^0.14.3",
     "autoprefixer": "^8.4.1",
@@ -46,7 +49,9 @@
     "source-map-support": "^0.4.15",
     "vee-validate": "^2.0.8",
     "vue": "^2.5.16",
-    "vue-i18n": "^7.6.0"
+    "vue-i18n": "^7.6.0",
+    "vue-lazyload": "^1.2.3",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {}
 }

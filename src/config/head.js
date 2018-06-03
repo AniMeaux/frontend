@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Ani\'Meaux - Protection animale',
+  title: 'Association de protection animale',
   titleTemplate: 'Ani\'Meaux - %s',
   meta: [
     { charset: 'utf-8' },
@@ -7,22 +7,22 @@ module.exports = {
     {
       hid: 'og:title',
       property: 'og:title',
-      content: 'Ani\'Meaux - Protection animale',
+      content: 'Ani\'Meaux - Association de protection animale',
     },
     {
       hid: 'og:description',
       property: 'og:description',
-      content: 'Site officiel de l\'association de protection animale Ani\'Meaux, basé sur la ville de Meaux',
+      content: 'Site officiel de l\'association de protection animale Ani\'Meaux, basé sur la ville de Meaux et ses environs.',
     },
     {
       hid: 'twitter:title',
       property: 'twitter:title',
-      content: 'Ani\'Meaux - Protection animale',
+      content: 'Ani\'Meaux - Association de protection animale',
     },
     {
       hid: 'twitter:description',
       property: 'twitter:description',
-      content: 'Site officiel de l\'association de protection animale Ani\'Meaux, basé sur la ville de Meaux',
+      content: 'Site officiel de l\'association de protection animale Ani\'Meaux, basé sur la ville de Meaux et ses environs.',
     },
     {
       hid: 'og:url',
@@ -67,7 +67,7 @@ module.exports = {
         },
         "contactPoint": {
           "@type": "ContactPoint",
-          "telephone": "+33123456789",
+          "telephone": "+33612194392",
           "email": "contact@animeaux.org",
           "contactOption" : "TollFree",
           "areaServed" : "FR",

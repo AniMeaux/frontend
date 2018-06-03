@@ -1,18 +1,41 @@
 <template>
-  <div class="adopt has-header">
+  <div class="adopt">
     <div class="wrap">
-      <h1 class="adopt-title display-1 title-underline">
-        À adopter
-      </h1>
-      <div class="adopt-layout">
-        <div class="adopt-layout-side">
-          <adopt-categories />
-        </div>
-        <div class="adopt-layout-main">
-          <adopt-header />
-          <adopt-list
-            :animals="animals"
+      <div class="adopt-header">
+        <h1 class="adopt-title display-1 title-underline">
+          {{ data.name }}
+        </h1>
+        <div class="adopt-header-buttons">
+          <share-button />
+          <button class="btn btn-blue" @click="adopt">
+            Adopter
+          </button>
+          <adopt-modal
+            :data="data"
+            :visible="adoptVisible"
+            @close="adoptVisible = false"
           />
+        </div>
+      </div>
+
+      <div class="adopt-layout">
+        <adopt-images
+          :data="data"
+        />
+        <div class="adopt-layout-main">
+          <div class="main-content">
+            <div class="main-content-description">
+              <h2 class="subhead-2">
+                Description:
+              </h2>
+              <p class="body-1">
+                {{ data.description }}
+              </p>
+            </div>
+            <adopt-specs
+              :data="data"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -20,51 +43,75 @@
 </template>
 
 <script>
-  import AdoptCategories from '@/components/adopt/adopt-categories';
-  import AdoptList from '@/components/adopt/adopt-list';
-  import AdoptHeader from '@/components/adopt/adopt-header';
+  import AdoptSpecs from '~/components/adopt-view/adopt-specs';
+  import AdoptImages from '~/components/adopt-view/adopt-images';
+  import AdoptModal from '~/components/adopt-view/adopt-modal';
+
+  import ShareButton from '~/components/global/share-button';
 
   export default {
     head() {
+      const titleCategories = {
+        cat: 'Chats à adopter',
+        dog: 'Chiens à adopter',
+        rodent: 'Rongeurs à adopter',
+        bird: 'Oiseaux à adopter',
+        reptile: 'Reptiles à adopter',
+      };
+
+      let image;
+      if (this.data.images.length > 0) {
+        image = [
+          {
+            hid: 'og:image',
+            name: 'og:image',
+            content: this.$cloudinary.getImageUrl(this.data.images[0].public_id),
+          },
+        ];
+      }
+
       return {
-        title: 'À adopter',
-        animals: [],
+        title: `${titleCategories[this.data.category]} - ${this.data.name}`,
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: `Adoptez ${this.data.name} au travers de notre association. ${this.data.description}`,
+          },
+          {
+            hid: 'og:title',
+            name: 'og:title',
+            content: `${titleCategories[this.data.category]} - ${this.data.name}`,
+          },
+          {
+            hid: 'og:description',
+            name: 'og:description',
+            content: `Adoptez ${this.data.name} au travers de notre association. ${this.data.description}`,
+          },
+          ...image,
+        ],
       };
     },
     async asyncData({ app, params }) {
-      const { data } = await app.$api.get('/animals');
-      return { animals: data.filter(e => e.status === 'non_adopted' && e.category === params.category) };
+      const { data } = await app.$api.get(`/animals/${params.id}`);
+      return { data };
     },
     data() {
       return {
-        categories: {
-          dogs: {
-            title: 'Nos chiens',
-            subtitle: 'Nos chiens qui attendent une famille',
-          },
-          cats: {
-            title: 'Nos chats',
-            subtitle: 'Nos chats qui attendent une famille',
-          },
-          reptiles: {
-            title: 'Nos reptiles',
-            subtitle: 'Nos reptiles qui attendent une famille',
-          },
-          birds: {
-            title: 'Nos oiseaux',
-            subtitle: 'Nos oiseaux qui attendent une famille',
-          },
-          rodent: {
-            title: 'Nos rongeurs',
-            subtitle: 'Nos rongeurs qui attendent une famille',
-          },
-        },
+        data: null,
+        adoptVisible: false,
       };
     },
+    methods: {
+      adopt() {
+        this.adoptVisible = true;
+      },
+    },
     components: {
-      AdoptCategories,
-      AdoptList,
-      AdoptHeader,
+      AdoptModal,
+      AdoptSpecs,
+      AdoptImages,
+      ShareButton,
     },
   };
 </script>
@@ -72,6 +119,20 @@
 <style lang="scss" scoped>
   .adopt{
     background-color: #F7F7F7;
+
+    &-header{
+      display: flex;
+      justify-content: space-between;
+
+      &-buttons{
+        display: flex;
+        margin: auto 0;
+
+        .social-button{
+          margin: auto 0;
+        }
+      }
+    }
     
     &-title{
       color: $blue;
@@ -80,35 +141,23 @@
     
     &-layout{
       display: grid;
-      grid-template-columns: 3fr 9fr;
+      grid-template-columns: 25% 75%;
       grid-gap: 16px;
       
       margin-top: 32px;
 
-      &-side, &-main{
+      &-images, &-main{
         background: white;
         border-radius: 3px 3px 0 0;
       }
 
       &-main{
-        padding: 32px;
+        padding: 16px;
         
-        h2, h3{
-          &.blue{
-            color: $blue;
-          }
-          &.red{
-            color: $red;
-          }
-          &.yellow{
-            color: $yellow;
-          }
-          &.lightblue{
-            color: $lightblue;
-          }
-          &.green{
-            color: $green;
-          }
+        .main-content{
+          display: grid;
+          grid-template-columns: 8fr 4fr;
+          grid-gap: 16px;
         }
       }
     }
