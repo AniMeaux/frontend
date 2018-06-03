@@ -2,7 +2,7 @@
   <div class="adopt has-header">
     <div class="wrap">
       <h1 class="adopt-title display-1 title-underline">
-        adopt view
+        À adopter
       </h1>
       <div class="adopt-layout">
         <div class="adopt-layout-side">
@@ -11,7 +11,7 @@
         <div class="adopt-layout-main">
           <adopt-header :category="'cat'" />
           <adopt-list
-            :animals="animals"
+            :animals="getAnimalsAdoption"
           />
         </div>
       </div>
@@ -20,6 +20,8 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
+
   import AdoptCategories from '@/components/adopt/adopt-categories';
   import AdoptList from '@/components/adopt/adopt-list';
   import AdoptHeader from '@/components/adopt/adopt-header';
@@ -28,16 +30,25 @@
     head() {
       return {
         title: 'À adopter',
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: 'Tous nos animaux disponibles à l\'adoption, sous contrat associatif.',
+          },
+        ],
       };
     },
-    async asyncData({ app }) {
-      const { data } = await app.$api.get('/animals');
-      return { animals: data.filter(e => e.status === 'non_adopted') };
+    computed: {
+      ...mapGetters(['getAnimalsAdoption']),
     },
-    data() {
-      return {
-        animals: [],
-      };
+    fetch({ app, store }) {
+      return app.$api.get('/animals')
+        .then((response) => {
+          if (response.ok) {
+            store.dispatch('setAnimals', response.data);
+          }
+        });
     },
     components: {
       AdoptCategories,

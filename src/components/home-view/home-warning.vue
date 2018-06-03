@@ -15,14 +15,22 @@
         <p class="body-1">
           Merci de nous <nuxt-link to="/contact">signaler</nuxt-link> tout message / publication vous paraissant suspect.
         </p>
+        <button class="btn" @click="hideWarning">
+          Fermer
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+  import { mapActions } from 'vuex';
+
   export default {
     name: 'home-warning',
+    methods: {
+      ...mapActions(['hideWarning']),
+    },
   };
 </script>
 
@@ -43,6 +51,16 @@
     p{
       a{
         color: white;
+      }
+    }
+
+    .btn{
+      background-color: transparent;
+      color: white;
+      margin-left: auto;
+
+      &:hover{
+        background-color: rgba(white, 0.12);
       }
     }
   }

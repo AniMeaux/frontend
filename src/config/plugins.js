@@ -3,4 +3,5 @@ module.exports = [
   '~/plugins/vue-i18n.js',
   '~/plugins/vee-validate.js',
   '~/plugins/vue-lazyload.js',
+  '~/plugins/cloudinary.js',
 ];

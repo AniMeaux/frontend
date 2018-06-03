@@ -37,14 +37,14 @@
           </li>
         </ul>
       </nav>
-      <div class="app-header-buttons">
+      <!-- <div class="app-header-buttons">
         <nuxt-link
           to="/become-member"
           class="btn btn-blue"
         >
           Devenir membre
         </nuxt-link>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -61,18 +61,18 @@
             title: 'Nos animaux à l\'adoption',
             color: 'blue',
           },
-          {
-            to: '/success',
-            name: 'Nos réussites',
-            title: 'Nos animaux adoptés',
-            color: 'green',
-          },
-          {
-            to: '/events',
-            name: 'Agenda',
-            title: 'Tous nos événements',
-            color: 'red',
-          },
+          // {
+          //   to: '/success',
+          //   name: 'Nos réussites',
+          //   title: 'Nos animaux adoptés',
+          //   color: 'green',
+          // },
+          // {
+          //   to: '/events',
+          //   name: 'Agenda',
+          //   title: 'Tous nos événements',
+          //   color: 'red',
+          // },
           {
             to: '/contact',
             name: 'Nous contacter',

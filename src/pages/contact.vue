@@ -1,7 +1,7 @@
 <template>
   <div class="contact has-header">
     <div class="wrap">
-      <h1 class="headline">
+      <h1 class="display-1 title-underline">
         Nous contacter
       </h1>
       <div class="layout-aside">
@@ -33,6 +33,13 @@
     head() {
       return {
         title: 'Nous contacter',
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: 'Contactez-nous par email, téléphone ou Facebook pour toute demande d\'adoption, famille d\'accueil ou signalement',
+          },
+        ],
       };
     },
     components: {
@@ -44,14 +51,22 @@
 
 <style lang="scss" scoped>
   .contact{
-    .layout-aside{
-      // display: grid;
-      // grid-template-columns: 8fr 4fr;
-      // grid-gap: 16px;
+    background-color: #F7F7F7;
 
-      // @media only screen and (max-width: 980px) {
-      //   grid-template-columns: 1fr;
-      // }
+    .display-1{
+      color: $lightblue;
+      margin: 16px 0;
+
+      &::after{
+        background-color: $lightblue;
+      }
+    }
+    
+    .layout-aside{
+      background: white;
+      margin-top: 32px;
+
+      padding: 16px;
     }
 
     &-form{

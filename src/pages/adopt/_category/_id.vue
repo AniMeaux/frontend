@@ -5,6 +5,9 @@
         <h1 class="adopt-title display-1 title-underline">
           {{ data.name }}
         </h1>
+        <div class="adopt-header-buttons">
+          <share-button />
+        </div>
       </div>
 
       <div class="adopt-layout">
@@ -35,11 +38,49 @@
   import AdoptSpecs from '~/components/adopt-view/adopt-specs';
   import AdoptImages from '~/components/adopt-view/adopt-images';
 
+  import ShareButton from '~/components/global/share-button';
+
   export default {
     head() {
+      const titleCategories = {
+        cat: 'Chats à adopter',
+        dog: 'Chiens à adopter',
+        rodent: 'Rongeurs à adopter',
+        bird: 'Oiseaux à adopter',
+        reptile: 'Reptiles à adopter',
+      };
+
+      let image;
+      if (this.data.images.length > 0) {
+        image = [
+          {
+            hid: 'og:image',
+            name: 'og:image',
+            content: this.$cloudinary.getImageUrl(this.data.images[0].public_id),
+          },
+        ];
+      }
+
       return {
-        title: 'À adopter',
-        animals: [],
+        title: `${titleCategories[this.data.category]} - ${this.data.name}`,
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: `Adoptez ${this.data.name} au travers de notre association. ${this.data.description}`,
+          },
+          {
+            hid: 'og:title',
+            name: 'og:title',
+            content: `${titleCategories[this.data.category]} - ${this.data.name}`,
+          },
+          {
+            hid: 'og:description',
+            name: 'og:description',
+            content: `Adoptez ${this.data.name} au travers de notre association. ${this.data.description}`,
+          },
+          ...image,
+        ],
       };
     },
     async asyncData({ app, params }) {
@@ -54,6 +95,7 @@
     components: {
       AdoptSpecs,
       AdoptImages,
+      ShareButton,
     },
   };
 </script>
@@ -61,6 +103,15 @@
 <style lang="scss" scoped>
   .adopt{
     background-color: #F7F7F7;
+
+    &-header{
+      display: flex;
+      justify-content: space-between;
+
+      &-buttons{
+        margin: auto 0;
+      }
+    }
     
     &-title{
       color: $blue;

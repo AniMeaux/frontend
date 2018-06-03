@@ -13,17 +13,12 @@
   export default {
     head() {
       return {
-        title: 'À adopter',
-        animals: [],
+        title: 'À adopteraze',
       };
     },
     validate({ params }) {
       const categories = ['dog', 'cat', 'reptile', 'rodent', 'bird'];
       return categories.includes(params.category);
-    },
-    async asyncData({ app, params }) {
-      const { data } = await app.$api.get('/animals');
-      return { animals: data.filter(e => e.status === 'non_adopted' && e.category === params.category) };
     },
     data() {
       return {

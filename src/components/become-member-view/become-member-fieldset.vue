@@ -26,8 +26,17 @@
 
 <style lang="scss" scoped>
   .become-member-fieldset{
+    $size: 28px;
+
+    margin-bottom: 32px;
+
     fieldset{
       border: none;
+      margin: 0;
+      padding: 0;
+      padding-left: $size * 2;
+      padding-right: 32px;
+
 
       legend{
         position: relative;
@@ -35,7 +44,6 @@
     }
 
     .fieldset-number{
-      $size: 28px;
       
       position: absolute;
       left: -$size * 1.5;

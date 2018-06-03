@@ -1,1 +1,4 @@
-module.exports = '~/components/global/app-loading.vue';
+module.exports = {
+  color: '#0078BF',
+  failedColor: '#ED2A26',
+};

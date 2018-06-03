@@ -26,5 +26,6 @@
 
 <style lang="scss" scoped>
   .become-member-form{
+    padding: 32px 0;
   }
 </style>
