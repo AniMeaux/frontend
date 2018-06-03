@@ -1,6 +1,7 @@
 <template>
   <div class="adopt-images">
     <cloudinary
+      v-if="data.images.length > 0"
       v-for="(image, k) in data.images"
       :key="k"
       :public-id="image.public_id"
@@ -16,6 +17,11 @@
         },
       ]"
     />
+    <div v-if="data.images.length === 0" class="adopt-images-empty">
+      <span class="body-1">
+        Aucune image disponible
+      </span>
+    </div>
   </div>
 </template>
 
@@ -38,9 +44,22 @@
 <style lang="scss" scoped>
   .adopt-images{
     display: grid;
-    grid-template-columns: repeat(3, 33.33%);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 200px 100px;
     grid-gap: 16px;
+
+    &-empty{
+      display: flex;
+      
+      background-color: $divider;
+      width: 100%;
+      grid-column: span 3;
+      grid-row: span 2;
+
+      span{
+        margin: auto;
+      }
+    }
 
     picture:first-child{
       grid-column: span 3;

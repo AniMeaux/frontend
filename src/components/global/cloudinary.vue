@@ -8,7 +8,7 @@
     />
 
     <img
-      :src="getSrc"
+      v-lazy="getSrc"
       :alt="alt"
     />
   </picture>
