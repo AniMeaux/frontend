@@ -11,8 +11,12 @@
         <div class="adopt-category-layout-main">
           <adopt-header :category="getCategory" />
           <adopt-list
+            v-if="getFilteredAnimals.length > 0"
             :animals="getFilteredAnimals"
           />
+          <p class="body-1" v-else>
+            Aucun animal n'est disponible à l'adoption pour le moment.
+          </p>
         </div>
       </div>
     </div>

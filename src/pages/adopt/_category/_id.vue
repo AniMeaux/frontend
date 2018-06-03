@@ -7,6 +7,14 @@
         </h1>
         <div class="adopt-header-buttons">
           <share-button />
+          <button class="btn btn-blue" @click="adopt">
+            Adopter
+          </button>
+          <adopt-modal
+            :data="data"
+            :visible="adoptVisible"
+            @close="adoptVisible = false"
+          />
         </div>
       </div>
 
@@ -37,6 +45,7 @@
 <script>
   import AdoptSpecs from '~/components/adopt-view/adopt-specs';
   import AdoptImages from '~/components/adopt-view/adopt-images';
+  import AdoptModal from '~/components/adopt-view/adopt-modal';
 
   import ShareButton from '~/components/global/share-button';
 
@@ -90,9 +99,16 @@
     data() {
       return {
         data: null,
+        adoptVisible: false,
       };
     },
+    methods: {
+      adopt() {
+        this.adoptVisible = true;
+      },
+    },
     components: {
+      AdoptModal,
       AdoptSpecs,
       AdoptImages,
       ShareButton,
@@ -109,7 +125,12 @@
       justify-content: space-between;
 
       &-buttons{
+        display: flex;
         margin: auto 0;
+
+        .social-button{
+          margin: auto 0;
+        }
       }
     }
     

@@ -32,5 +32,6 @@
 
 <style lang="scss" scoped>
   .share-button{
+    margin: auto 0;
   }
 </style>
