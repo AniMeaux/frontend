@@ -64,10 +64,10 @@
     data() {
       return {
         links: [
-          {
-            title: 'Devenir membre',
-            path: '/become-member',
-          },
+          // {
+          //   title: 'Devenir membre',
+          //   path: '/become-member',
+          // },
           {
             title: 'Mentions légales',
             path: '/legal',

@@ -11,8 +11,12 @@
         <div class="adopt-layout-main">
           <adopt-header :category="'cat'" />
           <adopt-list
-            :animals="getAnimalsAdoption"
+            v-if="getFilteredAnimals.length > 0"
+            :animals="getFilteredAnimals"
           />
+          <p class="body-1" v-else>
+            Aucun animal n'est disponible à l'adoption pour le moment.
+          </p>
         </div>
       </div>
     </div>
@@ -41,6 +45,10 @@
     },
     computed: {
       ...mapGetters(['getAnimalsAdoption']),
+      getFilteredAnimals() {
+        return this.getAnimalsAdoption
+          .filter(e => e.category === 'cat');
+      },
     },
     fetch({ app, store }) {
       return app.$api.get('/animals')
