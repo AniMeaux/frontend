@@ -103,26 +103,12 @@
         padding: 16px 32px;
       }
 
-      &-main{
-        // h1{
-        //   font-size: 24px;
-        //   font-weight: 500;
-        //   color: $blue;
-        //   text-transform: uppercase;
-        // }
-        // h2{
-        //   font-size: 18px;
-        //   font-weight: 500;
-        //   color: $primary-text;
-        // }
-        // p{
-        //   color: $secondary-text;
-        //   line-height: 1.5em;
-        // }
+      &-side{
+        overflow: hidden;
       }
 
       @media only screen and (max-width: 783px){
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
       }
     }
   }

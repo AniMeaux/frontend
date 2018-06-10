@@ -4,30 +4,32 @@
       Caractéristiques
     </h2>
     <table class="body-1">
-      <tr>
-        <td>
-          Age:
-        </td>
-        <td>
-          {{ data.age }}
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Sexe:
-        </td>
-        <td>
-          {{ data.gender }}
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Espèce:
-        </td>
-        <td>
-          {{ data.species }}
-        </td>
-      </tr>
+      <tbody>
+        <tr>
+          <td>
+            Age:
+          </td>
+          <td>
+            {{ data.age }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Sexe:
+          </td>
+          <td>
+            {{ data.gender }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Espèce:
+          </td>
+          <td>
+            {{ data.species }}
+          </td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </template>

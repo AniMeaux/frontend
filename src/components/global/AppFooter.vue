@@ -118,6 +118,7 @@
       @media only screen and (max-width: 783px) {
         flex-direction: column;
         justify-content: flex-start;
+        padding: 16px;
       }
 
       .name{

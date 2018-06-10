@@ -9,7 +9,7 @@
           <adopt-categories />
         </div>
         <div class="adopt-layout-main">
-          <adopt-header :category="'cat'" />
+          <adopt-header :category="'dog'" />
           <adopt-list
             v-if="getFilteredAnimals.length > 0"
             :animals="getFilteredAnimals"
@@ -47,7 +47,7 @@
       ...mapGetters(['getAnimalsAdoption']),
       getFilteredAnimals() {
         return this.getAnimalsAdoption
-          .filter(e => e.category === 'cat');
+          .filter(e => e.category === 'dog');
       },
     },
     fetch({ app, store }) {
@@ -97,6 +97,10 @@
 
       &-main{
         padding: 32px;
+
+        @media only screen and (max-width: 720px) {
+          padding: 16px;
+        }
         
         h2, h3{
           &.blue{
