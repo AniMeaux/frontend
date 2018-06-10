@@ -28,7 +28,7 @@
               <h2 class="subhead-2">
                 Description:
               </h2>
-              <p class="body-1">
+              <p class="body-1" style="white-space: pre-line;">
                 {{ data.description }}
               </p>
             </div>
