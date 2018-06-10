@@ -70,6 +70,8 @@
         ];
       }
 
+      const url = `https://www.animeaux.org${this.$route.path}`;
+
       return {
         title: `${titleCategories[this.data.category]} - ${this.data.name}`,
         meta: [
@@ -82,6 +84,11 @@
             hid: 'og:title',
             name: 'og:title',
             content: `${titleCategories[this.data.category]} - ${this.data.name}`,
+          },
+          {
+            hid: 'og:url',
+            name: 'og:url',
+            content: url,
           },
           {
             hid: 'og:description',
