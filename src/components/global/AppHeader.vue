@@ -1,8 +1,11 @@
 <template>
   <div class="app-header">
     <div class="wrap">
-      <a href="" class="app-header-menu">
-        <i class="material-icons" aria-hidden="true">menu</i>
+      <a @click.prevent="mobile = !mobile" class="app-header-menu">
+        <transition name="fade" mode="out-in">
+          <i v-if="!mobile" key="menu" class="material-icons" aria-hidden="true">menu</i>
+          <i v-else key="close" class="material-icons" aria-hidden="true">close</i>
+        </transition>
       </a>
       <div class="app-header-logo">
         <nuxt-link to="/">
@@ -22,13 +25,14 @@
           />
         </nuxt-link>
       </div>
-      <nav class="app-header-navigation">
+      <nav class="app-header-navigation" :class="{ mobile: mobile }">
         <ul>
           <li v-for="(link, k) in links" :key="k">
             <nuxt-link
               :to="link.to"
               :title="link.title"
               :class="[link.color]"
+              @click.native="mobile ? mobile = false : false"
               class="button">
               <span>
                 {{ link.name }}
@@ -80,6 +84,7 @@
             color: 'lightblue',
           },
         ],
+        mobile: false,
       };
     },
   };
@@ -143,9 +148,41 @@
     &-navigation{
       margin-left: 32px;
 
+      &.mobile{
+        position: fixed;
+        display: flex;
+        left: 0;
+        top: 70px;
+        width: 100%;
+
+        background: white;
+        margin: 0;
+        box-shadow: 0 3px 3px rgba(black, 0.12);
+
+        @media only screen and (max-width: 495px) {
+          display: flex;
+        }
+
+        ul, li, a{
+          flex-direction: column;
+          width: 100%;
+        }
+
+        a{
+          text-align: left;
+          height: 45px;
+          border: none;
+
+          span{
+            margin: auto 0;
+          }
+        }
+      }
+
       @media only screen and (max-width: 495px) {
         display: none;
       }
+
       
       ul, li{
         margin: 0;

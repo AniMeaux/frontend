@@ -74,7 +74,6 @@
       @media only screen and (max-width: 495px) {
         display: flex;
         justify-content: center;
-        padding-left: 16px;
       }
     }
 

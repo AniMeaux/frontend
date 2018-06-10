@@ -7,6 +7,7 @@ const loading = require('./src/config/loading');
 const env = require('./src/config/env');
 const auth = require('./src/config/auth');
 const localforage = require('./src/config/localforage');
+const router = require('./src/config/router');
 
 module.exports = {
   head,
@@ -19,4 +20,5 @@ module.exports = {
   env,
   auth,
   localforage,
+  router,
 };

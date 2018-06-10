@@ -80,6 +80,10 @@
 
       &-main{
         padding: 32px;
+
+        @media only screen and (max-width: 720px) {
+          padding: 16px;
+        }
         
         h2, h3{
           &.blue{

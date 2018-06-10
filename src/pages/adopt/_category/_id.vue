@@ -59,7 +59,7 @@
         reptile: 'Reptiles à adopter',
       };
 
-      let image;
+      let image = [];
       if (this.data.images.length > 0) {
         image = [
           {
@@ -69,6 +69,8 @@
           },
         ];
       }
+
+      const url = `https://www.animeaux.org${this.$route.path}`;
 
       return {
         title: `${titleCategories[this.data.category]} - ${this.data.name}`,
@@ -82,6 +84,11 @@
             hid: 'og:title',
             name: 'og:title',
             content: `${titleCategories[this.data.category]} - ${this.data.name}`,
+          },
+          {
+            hid: 'og:url',
+            name: 'og:url',
+            content: url,
           },
           {
             hid: 'og:description',
@@ -124,6 +131,11 @@
       display: flex;
       justify-content: space-between;
 
+      @media only screen and (max-width: 720px) {
+        flex-direction: column;
+        padding: 0 16px;
+      }
+
       &-buttons{
         display: flex;
         margin: auto 0;
@@ -141,10 +153,15 @@
     
     &-layout{
       display: grid;
-      grid-template-columns: 25% 75%;
+      grid-template-columns: 30% 80%;
       grid-gap: 16px;
       
       margin-top: 32px;
+
+      @media only screen and (max-width: 720px) {
+        grid-template-columns: 100%;
+        margin-top: 16px;
+      }
 
       &-images, &-main{
         background: white;
@@ -158,6 +175,10 @@
           display: grid;
           grid-template-columns: 8fr 4fr;
           grid-gap: 16px;
+
+          @media only screen and (max-width: 720px) {
+            grid-template-columns: 100%;
+          }
         }
       }
     }
