@@ -44,6 +44,10 @@ html, body{
   &-next, &-prev{
     background-color: $blue !important;
     color: white !important;
+
+    @media only screen and (max-width: 720px) {
+      display: none;
+    }
   }
 
   &-next{
