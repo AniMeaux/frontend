@@ -12,7 +12,7 @@
         {{ getTitle }}
       </h2>
       <h3 class="subhead-2">
-        {{ categories[category].subtitle }}
+        {{ (success ? categoriesSuccess : categories)[category].subtitle }}
       </h3>
     </div>
   </div>
@@ -22,6 +22,10 @@
   export default {
     name: 'adopt-header',
     props: {
+      success: {
+        type: Boolean,
+        default: false,
+      },
       category: {
         type: String,
         required: true,
@@ -29,14 +33,41 @@
     },
     computed: {
       getTitle() {
-        return this.categories[this.category].title;
+        return (this.success ? this.categoriesSuccess : this.categories)[this.category].title;
       },
       getIcon() {
-        return this.categories[this.category].icon;
+        return (this.success ? this.categoriesSuccess : this.categories)[this.category].icon;
       },
     },
     data() {
       return {
+        categoriesSuccess: {
+          dog: {
+            title: 'Nos chiens',
+            subtitle: 'Nos chiens qui ont trouvés une famille',
+            icon: 'dog.svg',
+          },
+          cat: {
+            title: 'Nos chats',
+            subtitle: 'Nos chats qui ont trouvés une famille',
+            icon: 'cat.svg',
+          },
+          reptile: {
+            title: 'Nos reptiles',
+            subtitle: 'Nos reptiles qui ont trouvés une famille',
+            icon: 'snake.svg',
+          },
+          bird: {
+            title: 'Nos oiseaux',
+            subtitle: 'Nos oiseaux qui ont trouvés une famille',
+            icon: 'parrot.svg',
+          },
+          rodent: {
+            title: 'Nos rongeurs',
+            subtitle: 'Nos rongeurs qui ont trouvés une famille',
+            icon: 'bunny.svg',
+          },
+        },
         categories: {
           dog: {
             title: 'Nos chiens',

@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="`/adopt/${data.category}/${data.id}`" class="adopt-list-item">
+  <nuxt-link :to="success ? `/success/${data.category}/${data.id}` : `/adopt/${data.category}/${data.id}`" class="adopt-list-item">
     <cloudinary
       v-if="getImage"
       class="item-image"
@@ -34,6 +34,10 @@
   export default {
     name: 'adopt-list-item',
     props: {
+      success: {
+        type: Boolean,
+        default: false,
+      },
       data: {
         type: Object,
       },

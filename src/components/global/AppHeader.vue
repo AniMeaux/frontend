@@ -65,12 +65,12 @@
             title: 'Nos animaux à l\'adoption',
             color: 'blue',
           },
-          // {
-          //   to: '/success',
-          //   name: 'Nos réussites',
-          //   title: 'Nos animaux adoptés',
-          //   color: 'green',
-          // },
+          {
+            to: '/success',
+            name: 'Nos réussites',
+            title: 'Nos animaux adoptés',
+            color: 'green',
+          },
           // {
           //   to: '/events',
           //   name: 'Agenda',
