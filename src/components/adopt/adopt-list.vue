@@ -3,6 +3,7 @@
     <li v-for="(animal, k) in animals" :key="k">
       <adopt-list-item
         :data="animal"
+        :success="success"
       />
     </li>
   </ul>
@@ -14,6 +15,10 @@
   export default {
     name: 'adopt-list',
     props: {
+      success: {
+        type: Boolean,
+        default: false,
+      },
       animals: {
         type: Array,
       },

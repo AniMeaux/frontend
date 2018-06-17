@@ -4,7 +4,7 @@
       <ul>
         <li v-for="(category, k) in categories" :key="k">
           <nuxt-link
-            :to="'/adopt/' + k"
+            :to="success ? '/success/' + k : '/adopt/' + k"
             :title="category.name"
             class="adopt-categories-item"
             :class="[category.color]"
@@ -26,6 +26,12 @@
 <script>
   export default {
     name: 'adopt-categories',
+    props: {
+      success: {
+        type: Boolean,
+        default: false,
+      },
+    },
     data() {
       return {
         categories: {
