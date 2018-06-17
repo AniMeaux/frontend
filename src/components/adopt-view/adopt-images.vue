@@ -1,7 +1,13 @@
 <template>
   <div class="adopt-images">
     <no-ssr>
-      <carousel v-if="data.images.length > 0" :per-page="1">
+      <carousel
+        v-if="data.images.length > 0"
+        :per-page="1"
+        :navigationClickTargetSize="16"
+        :paginationActiveColor="'#0078BF'"
+        navigationEnabled
+      >
         <slide
           data-index="0"
           v-for="(image, k) in data.images"
