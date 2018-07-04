@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="'/events/' + id" class="event-item">
+  <a href="https://www.facebook.com/events/228573844622300/" class="event-item">
     <h3 class="subhead-1 event-item-title">
       {{ name }}
     </h3>
@@ -9,7 +9,7 @@
     <p class="body-1 event-item-description">
       {{ description }}
     </p>
-  </nuxt-link>
+  </a>
 </template>
 
 <script>
