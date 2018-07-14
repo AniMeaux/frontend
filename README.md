@@ -11,7 +11,7 @@
 - [Getting started](#getting-started)
 - [Requirements](#requirements)
 - [Contribute](#contribute)
-- [Licence](#licence)
+- [License](#license)
 
 ## Requirements
 
@@ -32,6 +32,6 @@ $ docker-compose up
 
 If you want to contribute to the project (new feature, bugfix, ...), follow the contribution guidelines.
 
-## Licence
+## License
 
-This project is under the **MIT license**. See the [Licence](./LICENCE) file for more informations.
+This project is under the **MIT license**. See the [License](./LICENSE) file for more informations.
