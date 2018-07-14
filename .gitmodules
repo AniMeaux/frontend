@@ -1,5 +1,0 @@
-[submodule "back"]
-	url = https://github.com/AniMeaux/backend.git
-[submodule "website"]
-	path = website
-	url = https://github.com/AniMeaux/website.git
