@@ -5,6 +5,8 @@ RUN mkdir -p /front
 
 WORKDIR ./front
 COPY package*.json ./
+
+# Install dependencies
 RUN npm install
 RUN npm rebuild node-sass
 
