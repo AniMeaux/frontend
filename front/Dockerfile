@@ -1,19 +1,20 @@
 FROM node:8.5.0
 
 # Create app directory
-RUN mkdir -p /app
-COPY . /app
+RUN mkdir -p /front
 
-# Expose the app port
-EXPOSE 8080
+RUN ls
 
-# Copy files.
-WORKDIR /app
+WORKDIR ./front
+RUN ls
+COPY package*.json ./
+RUN ls
 RUN npm install
-
-# Rebuild Sass
 RUN npm rebuild node-sass
 
-RUN npm run build
+COPY . .
 
-CMD [ "npm", "start" ]
+# Rebuild Sass
+EXPOSE 8080
+
+CMD [ "npm", "run", "dev" ]
