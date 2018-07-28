@@ -13,12 +13,12 @@
       :begin="item.begin_at"
       :end="item.end_at"
     /> -->
-    <event-item
+    <!-- <event-item
       name="Charity Pot Party - Lush Val d'Europe"
       :description="'Ce samedi 7 juillet dans le magasin Lush Val d\'Europe, toutes les recettes de la crème Charity Pot seront reversées à notre association. Au programme, présentation de l\'association, de l\'équipe, de nos sauvetages et petites gourmandises vegan cuisinées par nos bénévoles. Venez nous rendre visite!'"
       :begin="begin"
       :end="begin"
-    />
+    /> -->
   </div>
 </template>
 
