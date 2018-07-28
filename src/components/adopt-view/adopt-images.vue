@@ -15,7 +15,7 @@
         >
           <cloudinary
             :public-id="image.public_id"
-            :transformations="{ c: 'fill', w: 400, h: 300 }"
+            :transformations="{ c: 'fill', w: 400, h: 300, fl: 'progressive' }"
             :sources="[
               {
                 media: '(min-width: 650px)',
