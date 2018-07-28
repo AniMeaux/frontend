@@ -36,9 +36,6 @@
           </div>
         </div>
         <div class="app-footer-logo" style="display: flex;">
-          <a key="zooplus" href="https://marketing.net.zooplus.fr/ts/i3971185/tsc?amc=con.zooplus.391263.404652.6879&tst=!!TIMESTAMP!!" target="_blank" rel="nofollow">
-            <img src="https://marketing.net.zooplus.fr/ts/i3971185/tsv?amc=con.zooplus.391263.404652.6879&tst=!!TIMESTAMP!!" border=0 width="125" height="125" alt="zooplus.fr" />
-          </a>
           <nuxt-link to="/" style="margin: auto 0; margin-left:32px;">
             <img
               title="Ani'Meaux logo"
