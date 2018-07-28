@@ -46,7 +46,7 @@
     },
     computed: {
       age() {
-        return this.data.age ? moment(this.data.birthday).fromNow(true) : null;
+        return this.data.birthday ? moment(this.data.birthday).fromNow(true) : null;
       },
       gender() {
         return this.data.gender === 'male' ? 'male' : 'femelle';
