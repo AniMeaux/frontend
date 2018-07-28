@@ -4,7 +4,7 @@
       v-if="getImage"
       class="item-image"
       :public-id="getImage.public_id"
-      :transformations="{ c: 'fill', w: 280, h: 280, fl: 'progressive', q: 'auto:low' }"
+      :transformations="{ c: 'fill', w: 280, h: 280, fl: 'progressive', q: '10', f: 'auto' }"
       :sources="[
         {
           media: '(min-width: 650px)',
