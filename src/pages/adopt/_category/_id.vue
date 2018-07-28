@@ -105,7 +105,7 @@
     },
     data() {
       return {
-        data: null,
+        data: {},
         adoptVisible: false,
       };
     },
