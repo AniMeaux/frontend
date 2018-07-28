@@ -5,12 +5,12 @@
     </h2>
     <table class="body-1">
       <tbody>
-        <tr>
+        <tr v-if="age">
           <td>
             Age:
           </td>
           <td>
-            {{ data.age }}
+            {{ age }}
           </td>
         </tr>
         <tr>
@@ -35,11 +35,18 @@
 </template>
 
 <script>
+  import moment from 'moment';
+
   export default {
     name: 'adopt-specs',
     props: {
       data: {
         type: Object,
+      },
+    },
+    computed: {
+      age() {
+        return this.data.age ? moment(this.data.birthday).fromNow(true) : null;
       },
     },
   };
