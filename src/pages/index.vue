@@ -43,7 +43,7 @@
         </div>
         <aside class="home-content-side">
           <home-facebook />
-          <!-- <home-events /> -->
+          <home-events />
         </aside>
       </div>
     </div>
